@@ -9,10 +9,10 @@ updated so that FTX files would not have to be re-converted back into TGA
 files for the tools proper use.
 09/15/2000 - Initial Release
 
-Heavy Metal FAKK 2 TOOLS ( Veraion 1.02 )- 09/15/2000
+Heavy Metal FAKK 2 TOOLS ( Version 1.02 )- 09/15/2000
 
-license.rtf             - the license file
-readme.txt              - what you are reading
+license-re.rtf             - the license file
+readme-re.txt              - what you are reading
 
 bin\dlgedit.exe         - the resource building utility
 bin\fontgen.exe         - Windows font converter utility
