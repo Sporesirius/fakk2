@@ -1,0 +1,18 @@
+waitforplayer
+start:
+
+$creeper1 thread creeper_thread
+$creeper1 setidlethread creeper_thread
+
+end
+
+creeper_thread:
+
+local.self walkto $patrol1
+waitFor local.self
+local.self walkto $patrol2
+waitFor local.self
+goto creeper_thread
+
+end
+

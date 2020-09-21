@@ -1,0 +1,47 @@
+//
+// Camera Script Map script
+// by Mark Dochtermann
+//
+
+// wait for the player to join
+waitforplayer
+// wait 5 seconds
+wait 5
+
+// setup camera 1
+// follow the path called campath1
+$camera1 orbit $campath1
+// no transition, the camera should start immediately
+$camera1 cut
+
+// setup camera 2
+// orbit $gruff
+$camera2 follow_distance 180
+$camera2 orbit_height 8
+$camera2 orbit $gruff
+$camera2 cut
+
+loop:
+// tell the user we are going to switch
+print "Following a Camera Path\n"
+//wait a second
+wait 1
+// cue to the camera over 1 second
+cuecamera $camera1 0
+// wait until the camera is done
+wait 5
+// tell the user we are going to orbit the other character
+print "Orbiting a character\n"
+// wait a second
+wait 1
+cuecamera $camera2 0
+// wait a while
+wait 5
+
+cueplayer 0
+end
+// loop ad infinitum
+goto loop
+
+// finished
+end

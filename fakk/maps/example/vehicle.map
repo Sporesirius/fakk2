@@ -1,0 +1,328 @@
+{
+"classname" "worldspawn"
+// brush 0
+{
+( -1424 168 0 ) ( -2128 168 0 ) ( -2128 -152 0 ) eden/CL_church 56 0 0.00 1 1 0 0 0 
+( -2128 -152 16 ) ( -1424 -152 16 ) ( -1424 -152 0 ) eden/CL_church 56 -96 0.00 1 1 0 0 0 
+( -1424 168 16 ) ( -2128 168 16 ) ( -2128 168 0 ) eden/CL_church 56 -96 0.00 1 1 0 0 0 
+( -1208 -152 104 ) ( -1028 168 -36 ) ( -848 -152 -176 ) eden/CL_church 56 -96 0.00 1 1 0 0 0 
+( -1576 -152 264 ) ( -1320 168 132 ) ( -1064 -152 0 ) eden/CL_church 56 -96 0.00 1 1 0 0 0 
+( -2120 -152 0 ) ( -1848 168 132 ) ( -1576 -152 264 ) eden/CL_church 56 -96 0.00 1 1 0 0 0 
+}
+// brush 1
+{
+( -2624 512 -32 ) ( -3448 512 -32 ) ( -3448 -512 -32 ) eden/CL_church 64 0 0.00 1 1 0 0 0 
+( -3448 -512 1568 ) ( -3448 512 1568 ) ( -2624 512 1568 ) eden/CL_church 64 0 0.00 1 1 0 0 0 
+( -3440 -520 32 ) ( -2616 -520 32 ) ( -2616 -520 0 ) eden/CL_church 64 0 0.00 1 1 0 0 0 
+( -2624 520 32 ) ( -3448 520 32 ) ( -3448 520 0 ) eden/CL_church 64 0 0.00 1 1 0 0 0 
+( -3656 512 32 ) ( -3656 -512 32 ) ( -3656 -512 0 ) eden/CL_church 0 0 0.00 1 1 0 0 0 
+( -3648 -512 32 ) ( -3648 512 32 ) ( -3648 -512 0 ) eden/CL_church 0 0 0.00 1 1 0 0 0 
+}
+// brush 2
+{
+( 512 512 -22 ) ( -312 512 -22 ) ( -312 -512 -22 ) eden/CL_church 0 0 0.00 1 1 0 0 0 
+( -314 -512 1578 ) ( -314 512 1578 ) ( 510 512 1578 ) eden/CL_church 0 0 0.00 1 1 0 0 0 
+( 518 512 1578 ) ( 518 520 1578 ) ( 520 520 -22 ) eden/CL_church 0 10 0.00 1 1 0 0 0 
+( 517.999939 520 1578 ) ( -3658.000244 520 1578 ) ( -3656.000244 520 -22 ) eden/CL_church 0 10 0.00 1 1 0 0 0 
+( -3658.000244 520 1578 ) ( -3658.000244 512 1578 ) ( -3656.000244 512 -22 ) eden/CL_church 0 10 0.00 1 1 0 0 0 
+( -3658.000244 512 1578 ) ( 517.999939 512 1578 ) ( 519.999939 512 -22 ) eden/CL_church 0 10 0.00 1 1 0 0 0 
+}
+// brush 3
+{
+( 512 512 -32 ) ( -312 512 -32 ) ( -312 -512 -32 ) eden/CL_church 0 0 0.00 1 1 0 0 0 
+( -312 -512 1568 ) ( -312 512 1568 ) ( 512 512 1568 ) eden/CL_church 0 0 0.00 1 1 0 0 0 
+( -304 -520 32 ) ( 520 -520 32 ) ( 520 -520 0 ) eden/CL_church 0 0 0.00 1 1 0 0 0 
+( 520 -520 32 ) ( 520 504 32 ) ( 520 504 0 ) eden/CL_church 0 0 0.00 1 1 0 0 0 
+( 512 520 32 ) ( -312 520 32 ) ( -312 520 0 ) eden/CL_church 0 0 0.00 1 1 0 0 0 
+( 512 504 32 ) ( 512 -520 32 ) ( 512 504 0 ) eden/CL_church 0 0 0.00 1 1 0 0 0 
+}
+// brush 4
+{
+( 512 512 -32 ) ( -312 512 -32 ) ( -312 -512 -32 ) eden/CL_church 0 0 0.00 1 1 0 0 0 
+( -312 -512 1568 ) ( -312 512 1568 ) ( 512 512 1568 ) eden/CL_church 0 0 0.00 1 1 0 0 0 
+( -304 -520 32 ) ( 520 -520 32 ) ( 520 -520 0 ) eden/CL_church 0 0 0.00 1 1 0 0 0 
+( 520 -520 32 ) ( 520 504 32 ) ( 520 504 0 ) eden/CL_church 0 0 0.00 1 1 0 0 0 
+( -3656 512 32 ) ( -3656 -512 32 ) ( -3656 -512 0 ) eden/CL_church 0 0 0.00 1 1 0 0 0 
+( -2616 -512 32 ) ( -3440 -512 32 ) ( -2616 -512 0 ) eden/CL_church 0 0 0.00 1 1 0 0 0 
+}
+// brush 5
+{
+( -312 -512 1576 ) ( -312 512 1576 ) ( 512 512 1576 ) tom/wl_wood_dark 0 0 0.00 1 1 0 0 0 
+( -304 -520 1192 ) ( 520 -520 1192 ) ( 520 -520 1184 ) tom/wl_wood_dark 0 0 0.00 1 1 0 0 0 
+( 520 -520 1192 ) ( 520 504 1192 ) ( 520 504 1184 ) tom/wl_wood_dark 0 0 0.00 1 1 0 0 0 
+( 512 520 1192 ) ( -312 520 1192 ) ( -312 520 1184 ) tom/wl_wood_dark 0 0 0.00 1 1 0 0 0 
+( -3656 512 1192 ) ( -3656 -512 1192 ) ( -3656 -512 1184 ) tom/wl_wood_dark 0 0 0.00 1 1 0 0 0 
+( -312 512 1568 ) ( -312 -512 1568 ) ( 512 512 1568 ) tom/wl_wood_dark 0 0 0.00 1 1 0 0 0 
+}
+// brush 6
+{
+( 512 512 -8 ) ( -312 512 -8 ) ( -312 -512 -8 ) tom/fl_wgmarb 0 0 0.00 1 1 0 0 0 
+( -304 -520 8 ) ( 520 -520 8 ) ( 520 -520 0 ) tom/fl_wgmarb 0 0 0.00 1 1 0 0 0 
+( 520 -520 8 ) ( 520 504 8 ) ( 520 504 0 ) tom/fl_wgmarb 0 0 0.00 1 1 0 0 0 
+( 512 520 8 ) ( -312 520 8 ) ( -312 520 0 ) tom/fl_wgmarb 0 0 0.00 1 1 0 0 0 
+( -3656 512 8 ) ( -3656 -512 8 ) ( -3656 -512 0 ) tom/fl_wgmarb 0 0 0.00 1 1 0 0 0 
+( -312 512 0 ) ( 512 512 0 ) ( -312 -512 0 ) tom/fl_wgmarb 0 0 0.00 1 1 0 0 0 
+}
+}
+// entity 1
+{
+"classname" "vehicles_atv_backtire"
+"scale" "1.0"
+"model" "obj_atvbacktire.tik"
+"origin" "80.45 -203.25 62.41"
+}
+// entity 2
+{
+"classname" "vehicles_atv_fronttire"
+"scale" "1.0"
+"model" "obj_atvfronttire.tik"
+"origin" "10.45 -203.25 62.41"
+}
+// entity 3
+{
+"classname" "vehicles_atv"
+"scale" "1.0"
+"model" "obj_atv.tik"
+"angle" "180"
+"origin" "46.00 -182.00 46.00"
+}
+// entity 4
+{
+"origin" "136 264 776"
+"classname" "light"
+}
+// entity 5
+{
+"origin" "336 -304 0"
+"angle" "135"
+"classname" "info_player_start"
+}
+// entity 6
+{
+"classname" "light"
+"origin" "-216 264 1064"
+}
+// entity 7
+{
+"origin" "136 -88 424"
+"classname" "light"
+}
+// entity 8
+{
+"classname" "light"
+"origin" "-216 -88 328"
+}
+// entity 9
+{
+"origin" "-216 -344 328"
+"classname" "light"
+}
+// entity 10
+{
+"classname" "light"
+"origin" "136 -312 328"
+}
+// entity 11
+{
+"origin" "424 -312 328"
+"classname" "light"
+}
+// entity 12
+{
+"classname" "light"
+"origin" "392 104 328"
+}
+// entity 13
+{
+"origin" "-24 72 456"
+"classname" "light"
+}
+// entity 14
+{
+"origin" "-128 192 1256"
+"classname" "light"
+}
+// entity 15
+{
+"classname" "light"
+"origin" "-256 296 1256"
+}
+// entity 16
+{
+"classname" "light"
+"origin" "-864 304 776"
+}
+// entity 17
+{
+"origin" "-1216 304 1064"
+"classname" "light"
+}
+// entity 18
+{
+"classname" "light"
+"origin" "-864 -48 424"
+}
+// entity 19
+{
+"origin" "-1216 -48 328"
+"classname" "light"
+}
+// entity 20
+{
+"classname" "light"
+"origin" "-1216 -304 328"
+}
+// entity 21
+{
+"origin" "-864 -272 328"
+"classname" "light"
+}
+// entity 22
+{
+"classname" "light"
+"origin" "-576 -272 328"
+}
+// entity 23
+{
+"origin" "-608 144 328"
+"classname" "light"
+}
+// entity 24
+{
+"classname" "light"
+"origin" "-1024 112 456"
+}
+// entity 25
+{
+"classname" "light"
+"origin" "-1128 232 1256"
+}
+// entity 26
+{
+"origin" "-1256 336 1256"
+"classname" "light"
+}
+// entity 27
+{
+"origin" "-1784 304 776"
+"classname" "light"
+}
+// entity 28
+{
+"classname" "light"
+"origin" "-2136 304 1064"
+}
+// entity 29
+{
+"origin" "-1784 -48 424"
+"classname" "light"
+}
+// entity 30
+{
+"classname" "light"
+"origin" "-2136 -48 328"
+}
+// entity 31
+{
+"origin" "-2136 -304 328"
+"classname" "light"
+}
+// entity 32
+{
+"classname" "light"
+"origin" "-1784 -272 328"
+}
+// entity 33
+{
+"origin" "-1496 -272 328"
+"classname" "light"
+}
+// entity 34
+{
+"classname" "light"
+"origin" "-1528 144 328"
+}
+// entity 35
+{
+"origin" "-1944 112 456"
+"classname" "light"
+}
+// entity 36
+{
+"origin" "-2048 232 1256"
+"classname" "light"
+}
+// entity 37
+{
+"classname" "light"
+"origin" "-2176 336 1256"
+}
+// entity 38
+{
+"classname" "light"
+"origin" "-2784 304 776"
+}
+// entity 39
+{
+"origin" "-3136 304 1064"
+"classname" "light"
+}
+// entity 40
+{
+"classname" "light"
+"origin" "-2784 -48 424"
+}
+// entity 41
+{
+"origin" "-3136 -48 328"
+"classname" "light"
+}
+// entity 42
+{
+"classname" "light"
+"origin" "-3136 -304 328"
+}
+// entity 43
+{
+"origin" "-2784 -272 328"
+"classname" "light"
+}
+// entity 44
+{
+"classname" "light"
+"origin" "-2496 -272 328"
+}
+// entity 45
+{
+"origin" "-2528 144 328"
+"classname" "light"
+}
+// entity 46
+{
+"classname" "light"
+"origin" "-2944 112 456"
+}
+// entity 47
+{
+"classname" "light"
+"origin" "-3048 232 1256"
+}
+// entity 48
+{
+"origin" "-3176 336 1256"
+"classname" "light"
+}
+// entity 49
+{
+"origin" "10.45 -163.25 62.41"
+"model" "obj_atvfronttire.tik"
+"scale" "1.0"
+"classname" "vehicles_atv_fronttire"
+}
+// entity 50
+{
+"origin" "80.45 -161.25 62.41"
+"model" "obj_atvbacktire.tik"
+"scale" "1.0"
+"classname" "vehicles_atv_backtire"
+}

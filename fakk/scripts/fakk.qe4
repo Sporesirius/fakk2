@@ -1,0 +1,12 @@
+{
+"texturepath" "c:/fakktools/fakk/textures/"
+"entitypath" "c:/fakktools/entities/entities.def"
+"modelpath" "c:/fakktools/fakk/models/*.tik"
+"mapspath" "c:/fakktools/fakk/maps/example"
+"rshcmd" ""
+"remotebasepath" "c:/fakktools/fakk"
+"basepath" "c:/fakktools/fakk"
+"autosave" "c:/fakktools/fakk/maps/autosave/autosave.map"
+"bsp_FastVis" "! c:\fakktools\bin\q3map -all -fast -gamedir c:/fakktools/fakk $"
+"bsp_FullVis" "! c:\fakktools\bin\q3map -all -gamedir c:/fakktools/fakk $"
+}

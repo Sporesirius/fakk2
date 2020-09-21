@@ -1,0 +1,59 @@
+waitforplayer
+
+wait 3
+
+thread larry_touch_setup
+
+loop:
+
+wait 1
+
+print "dropping larry\n"
+wait 0.2
+$larry physics_on
+$larry physics_velocity "0 0 300"
+wait 0.2
+
+print "dropping guss\n"
+$guss physics_on
+$guss rotatex 100
+$guss rotatey 200
+$guss physics_velocity "200 -80 300"
+wait 0.2
+
+print "dropping sam\n"
+$sam physics_on
+wait 0.2
+
+print "dropping tom\n"
+$tom physics_on
+
+wait 3
+print "resetting everyone\n"
+$larry physics_off
+$guss physics_off
+$guss angles "0 0 0"
+$tom physics_off
+$sam physics_off
+
+$larry time 2
+$larry moveup 192
+$guss time 2
+$guss moveto $guss_start
+$tom time 2
+$tom moveup 192
+$sam time 2
+$sam moveup 192
+
+waitfor $tom
+goto loop
+
+larry_touch:
+print "larry touched\n"
+pause
+
+larry_touch_setup:
+$larry ontouch larry_touch
+pause
+
+end

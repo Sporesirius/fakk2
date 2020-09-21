@@ -1,0 +1,1 @@
+q3radiant ..\fakk\scripts\fakk.qe4

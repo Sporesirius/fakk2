@@ -1,0 +1,1194 @@
+/*QUAKED func_beam (0 0.25 .5) (-8 -8 -8) (8 8 8) START_ON PERSIST WAVE NOISE
+
+This creates a beam effect from the origin to the target's origin. If no
+target is specified, uses angles and projects beam out from there.
+
+"model" Specifies the model to use as the beam
+"overlap" Specifies the amount of overlap each beam link should have. Use this to fill
+in the cracks when using electric on beams. (Default is 0)
+"minoffset" Minimum amount of electrical variation (Default is 0)
+"maxoffset" Maximum amount of electrical variation (Default is 5)
+"color" Vector specifiying the red,green, and blue components. (Default is "1 1 1")
+"alpha" Alpha of the beam (Default is 1.0)
+"damage" Amount of damage the beam inflicts if beam hits someone (Default is 0)
+"angles" Sets the angle of the beam if no target is specified.
+"life" Sets the life of the beam for use with the persist spawnflag.  This is how long a beam will
+be displayed.
+"numsegments" Number of segments in a beam (Default is 4)
+"delay" Delay between beam updates.  (i.e. slows the effect of the beam down)
+"shader" Set the shader of the beam
+"scale" Set the width of the beam
+
+START_ON  - Starts the beam on
+PERSIST   - Keeps the last few beams around and fades them out over the life of the beam
+WAVE      - Make the beam follow a sin wave pattern
+NOISE     - Use a more computationally expensive random effect, but the results are smoother
+
+If the model field is not set, then a renderer generated beam will be created
+using the color, minoffset, maxoffset, scale, and subdivisions fields
+
+If the targetname is set, it will use the target specified as the endpoint of the beam
+
+/*****************************************************************************/
+
+
+/*QUAKED func_rotatingdoor (0 0.25 0.5) ? START_OPEN OPEN_DIRECTION DOOR_DONT_LINK NOT_PLAYERS NOT_MONSTERS TOGGLE AUTO_OPEN TARGETED
+if two doors touch, they are assumed to be connected and operate as a unit.
+
+TOGGLE causes the door to wait in both the start and end states for a trigger event.
+DOOR_DONT_LINK is for when you have two doors that are touching but you want to operate independently.
+
+START_OPEN causes the door to move to its destination when spawned, and operate in reverse.  It is used to temporarily or permanently close off an area when triggered (not usefull for touch or takedamage doors).
+OPEN_DIRECTION indicates which direction to open when START_OPEN is set.
+AUTO_OPEN causes the door to open when a player is near instead of waiting for the player to use the door.
+TARGETED door is only operational from triggers or script
+
+"message"		is printed when the door is touched if it is a trigger door and it hasn't been fired yet
+"openangle"    how wide to open the door
+"angle"			determines the opening direction.  point toward the middle of the door (away from the hinge)
+"targetname"	if set, no touch field will be spawned and a remote button or trigger field activates the door.
+"health"			if set, door must be shot open
+"time"			move time (0.3 default)
+"wait"			wait before returning (3 default, -1 = never return)
+"dmg"				damage to inflict when blocked (0 default)
+"key"          The item needed to open this door (default nothing)
+
+"sound_stop"		Specify the sound that plays when the door stops moving (default global door_stop)
+"sound_move"		Specify the sound that plays when the door opens or closes (default global door_moving)
+"sound_message"	Specify the sound that plays when the door displays a message
+"sound_locked"	   Specify the sound that plays when the door is locked
+
+******************************************************************************/
+
+
+/*QUAKED func_door (0 0.25 0.5) ? START_OPEN x DOOR_DONT_LINK NOT_PLAYERS NOT_MONSTERS TOGGLE AUTO_OPEN TARGETED
+if two doors touch, they are assumed to be connected and operate as a unit.
+
+TOGGLE causes the door to wait in both the start and end states for a trigger event.
+DOOR_DONT_LINK is for when you have two doors that are touching but you want to operate independently.
+
+START_OPEN causes the door to move to its destination when spawned, and operate in reverse.  It is used to temporarily or permanently close off an area when triggered (not usefull for touch or takedamage doors).
+OPEN_DIRECTION indicates which direction to open when START_OPEN is set.
+AUTO_OPEN causes the door to open when a player is near instead of waiting for the player to use the door.
+TARGETED door is only operational from triggers or script
+
+"message"		is printed when the door is touched if it is a trigger door and it hasn't been fired yet
+"angle"			determines the opening direction.  point toward the middle of the door (away from the hinge)
+"targetname"	if set, no touch field will be spawned and a remote button or trigger field activates the door.
+"health"			if set, door must be shot open
+"speed"			move speed (100 default)
+"time"			move time (1/speed default, overides speed)
+"wait"			wait before returning (3 default, -1 = never return)
+"lip"				lip remaining at end of move (8 default)
+"dmg"				damage to inflict when blocked (0 default)
+"key"          The item needed to open this door (default nothing)
+
+"sound_stop"		Specify the sound that plays when the door stops moving (default global door_stop)
+"sound_move"		Specify the sound that plays when the door opens or closes (default global door_moving)
+"sound_message"	Specify the sound that plays when the door displays a message
+"sound_locked"	   Specify the sound that plays when the door is locked
+
+******************************************************************************/
+
+
+/*QUAKED script_door (0 0.5 1) ? START_OPEN x DOOR_DONT_LINK NOT_PLAYERS NOT_MONSTERS TOGGLE AUTO_OPEN TARGETED
+if two doors touch, they are assumed to be connected and operate as a unit.
+
+TOGGLE causes the door to wait in both the start and end states for a trigger event.
+DOOR_DONT_LINK is for when you have two doors that are touching but you want to operate independently.
+
+START_OPEN causes the door to move to its destination when spawned, and operate in reverse.  It is used to temporarily or permanently close off an area when triggered (not usefull for touch or takedamage doors).
+OPEN_DIRECTION indicates which direction to open when START_OPEN is set.
+AUTO_OPEN causes the door to open when a player is near instead of waiting for the player to use the door.
+TARGETED door is only operational from triggers or script
+
+"message"		is printed when the door is touched if it is a trigger door and it hasn't been fired yet
+"angle"			determines the opening direction.  point toward the middle of the door (away from the hinge)
+"targetname"	if set, no touch field will be spawned and a remote button or trigger field activates the door.
+"health"			if set, door must be shot open
+"speed"			move speed (100 default)
+"time"			move time (1/speed default, overides speed)
+"wait"			wait before returning (3 default, -1 = never return)
+"dmg"				damage to inflict when blocked (0 default)
+"key"          The item needed to open this door (default nothing)
+"initthread"   code to execute to setup the door (optional)
+"openthread"   code to execute when opening the door (required)
+               The openthread should send the "dooropened" event to the door, when it is completely open
+"closethread"  code to execute when closing the door (required)
+               The closethread should send the "doorclosed" event to the door, when it is completely closed
+
+"sound_stop"		Specify the sound that plays when the door stops moving (default global door_stop)
+"sound_move"		Specify the sound that plays when the door opens or closes (default global door_moving)
+"sound_message"	Specify the sound that plays when the door displays a message
+"sound_locked"	   Specify the sound that plays when the door is locked
+
+******************************************************************************/
+
+
+/*QUAKED func_earthquake (0 0.25 0.5) (-8 -8 -8) (8 8 8) NO_RAMPUP NO_RAMPDOWN
+ Causes an earthquake
+"duration" is the duration of the earthquake.  Default is 0.8 seconds.
+"magnitude" severity of the quake.  Default 1.0
+******************************************************************************/
+
+
+/*QUAKED func_exploder (0 0.25 0.5) (0 0 0) (8 8 8)
+
+  Spawns an explosion when triggered.  Triggers any targets.
+
+  "dmg" specifies how much damage to cause. Default indicates 120.
+  "key" The item needed to activate this. (default nothing)
+  "thread" name of thread to trigger.  This can be in a different script file as well\
+by using the '::' notation.
+******************************************************************************/
+
+
+/*QUAKED func_multi_exploder (0 0.25 0.5) ? MULTI_USE RANDOM_TIME VISIBLE RANDOM_SCALE
+
+  Spawns an explosion when triggered.  Triggers any targets.
+  size of brush determines where explosions will occur.
+
+  "dmg" specifies how much damage to cause from each explosion. (Default 120)
+  "delay" delay before exploding (Default 0 seconds)
+  "duration" how long to explode for (Default 1 second)
+  "wait" time between each explosion (default 0.25 seconds)
+  "random" random factor (default 0.25)
+  "key" The item needed to activate this. (default nothing)
+  "thread" name of thread to trigger.  This can be in a different script file as well\
+by using the '::' notation.
+  "health" makes the object damageable
+  "scale" set the maximum size for spawned debris and explosions.
+
+  MULTI_USE allows the func_multi_exploder to be used more than once
+  RANDOM_TIME adjusts the wait between each explosion by the random factor
+  VISIBLE allows you to make the trigger visible
+  RANDOM_SCALE scale explosions randomly. size will be between 0.25 and 1 times scale
+
+******************************************************************************/
+
+
+/*QUAKED func_explodeobject (0 0.25 0.5) ? MULTI_USE RANDOM_TIME VISIBLE RANDOM_SCALE NO_EXPLOSIONS METAL_DEBRIS ROCK_DEBRIS NOTSOLID
+
+  Spawns different kinds of debris when triggered.  Triggers any targets.
+  size of brush determines where explosions and debris will be spawned.
+
+  "dmg" specifies how much damage to cause from each explosion. (Default 120)
+  "delay" delay before exploding (Default 0 seconds)
+  "duration" how long to explode for (Default 1 second)
+  "wait" time between each explosion (default 0.25 seconds)
+  "random" random factor (default 0.25)
+  "health" if specified, object must be damaged to trigger
+  "key" The item needed to activate this. (default nothing)
+  "severity" how violent the debris should be ejected from the object( default 1.0 )
+  "debrismodel" What kind of debris to spawn (default nothing)
+  "amount" how much debris to spawn for each explosion (default 4)
+  "thread" name of thread to trigger.  This can be in a different script file as well\
+by using the '::' notation.
+  "health" makes the object damageable
+  "scale" set the maximum size for spawned debris and explosions
+
+  MULTI_USE allows the func_explodeobject to be used more than once
+  RANDOM_TIME adjusts the wait between each explosion by the random factor
+  VISIBLE allows you to make the trigger visible
+  RANDOM_SCALE scale explosions and debris randomly. size will be between 0.25 and 1 times scale
+  NO_EXPLOSIONS, if checked no explosions will be created
+  METAL_DEBRIS automatically spawn metal debris, no need for debrismodel to be set
+  ROCK_DEBRIS automatically spawn rock debris, no need for debrismodel to be set
+  NOTSOLID debris is not solid
+
+  other valid tiki files include:
+
+  obj_debris_glass1-4.tik
+  obj_debris_wood1-4.tik
+
+******************************************************************************/
+
+
+/*QUAKED info_grav_pathnode (0 0 .5) (-16 -16 0) (16 16 32) HEADNODE FORCE PULL_UPWARDS
+ "radius" Radius of the effect of the pull (Default is 256)
+ "speed"  Speed of the pull (Use negative for a repulsion) (Default is 100)
+
+  Set HEADNODE to signify the head of the path.
+  Set FORCE if you want un-fightable gravity ( i.e. can't go backwards )
+  Set PULL_UPWARDS if you want the gravnodes to pull you upwards also
+******************************************************************************/
+
+
+/*QUAKED light (0.75 0.5 0) (-8 -8 -8) (8 8 8) LINEAR NO_ENTITIES ENTITY_TRACE
+
+Non-displayed light. If it targets another entity it will become a spot light
+if "LINEAR" is set, it will be a linear light
+if "NO_ENTITIES" is set, this light will only effect the world, not entities
+if "ENTITY_TRACE" is set, a trace is done betwee the light and the entity.\
+The light is only added if the trace is clear
+
+"no_entity_light" - this light will not effect entities, just the world
+"light" - the intensity of the light, default 300       
+"color" - the color of the light
+"falloff" - if linear, specify the linear falloff (defaults to 1)
+"radius" - make this a spot light of the given radius
+"angles" - make this a spot light centered on angles
+"spot_angle" - if this is a spot light, what angle to use (default 45)
+"entity_trace" - trace between the entity and the light
+
+******************************************************************************/
+
+
+/*QUAKED detail (0.5 0 1.0) ?
+
+Used to fake detail brushes, convenient for grouping
+
+******************************************************************************/
+
+
+/*QUAKED func_group (0.5 0.5 0.5) ?
+
+Used to group brushes together just for editor convenience.
+
+******************************************************************************/
+
+
+/*QUAKED func_remove (0.75 0.75 0.75) ?
+
+Used for lighting and such
+
+******************************************************************************/
+
+
+/*QUAKED misc_model (1 0.5 1) (0 0 0) (0 0 0)
+"model"     arbitrary .tik file to display
+******************************************************************************/
+
+
+/*QUAKED info_null (0 0.5 0) (-4 -4 -4) (4 4 4)
+
+Used as a positional target for spotlights, etc.
+
+******************************************************************************/
+
+
+/*QUAKED info_notnull (0 0.5 0) (-4 -4 -4) (4 4 4)
+
+Used as a positional target for lightning.
+
+******************************************************************************/
+
+
+/*QUAKED func_explodingwall (0 0.25 0.5) ? RANDOMANGLES LANDSHATTER NOT_PLAYERS MONSTERS PROJECTILES INVISIBLE ACCUMALATIVE TWOSTAGE
+
+Blows up on activation or when attacked
+
+"explosions"      number of explosions to spawn ( default 1 )
+"land_angles"     The angles you want this piece to\
+                  orient to when it lands on the ground
+"land_radius"     The distance of the ground the piece\
+                  should be when on the ground ( default 16 )
+"anglespeed"      Speed at which pieces rotate ( default 100 ) \
+                  if RANDOMANGLES ( default is 600 )
+"key"             The item needed to activate this. (default nothing)
+"base_velocity"   The speed that the debris will have when triggered.  (default 0 0 280)
+"random_velocity" The variation of the velocity. x & y will be from -n < X,Y < n and z is 0 <= Z < n.  (default 140 140 140)
+
+
+IF RANDOMANGLES is set, object randomly spins while in the air.
+IF LANDSHATTER is set, object shatters when it hits the ground.
+IF TWOSTAGE is set, object can be shattered once it lands on the ground.
+IF ACCUMALATIVE is set, damage is accumlative not threshold
+IF INVISIBLE is set, these are invisible and not solid until triggered
+If NOT_PLAYERS is set, the trigger does not respond to players
+If MONSTERS is set, the trigger will respond to monsters
+If PROJECTILES is set, the trigger will respond to projectiles (rockets, grenades, etc.)
+
+******************************************************************************/
+
+
+/*QUAKED trigger_teleport (0.5 0.5 0.5) ? VISIBLE x NOT_PLAYERS NOT_MONSTERS NOT_PROJECTILES NO_EFFECTS
+
+Touching this entity will teleport players to the targeted object.
+
+"key"						The item needed to activate this. (default nothing)
+
+"teleportthread"		The thread that is run when the player is teleported
+
+If NOT_PLAYERS is set, the teleporter does not teleport players
+If NOT_MONSTERS is set, the teleporter does not teleport monsters
+If NOT_PROJECTILES is set, the teleporter does not teleport projectiles (rockets, grenades, etc.)
+If NO_EFFECTS is set, the special effect will not happen and the teleport will be instant
+
+******************************************************************************/
+
+
+/*QUAKED func_teleportdest (0 0.25 0.5) (-32 -32 0) (32 32 8)
+
+Point trigger_teleport at these.
+
+******************************************************************************/
+
+
+/*QUAKED func_useanim (0 0.5 0) ? VISIBLE TOUCHABLE CONTINUOUS
+
+This object allows you to place the player into a specific animation for the
+purposes of using an object within the world.
+
+This object should point at a func_useanimdest which contains specific
+information about how the player is supposed to be posed.
+
+"count" - how many times this should trigger (default -1, infinite)
+"thread" - thread to fire when used
+"triggertarget" - what to trigger when used.
+"delay" - how long it takes to be re-triggered ( default 3 seconds )
+"key" - item needed to activate this
+
+VISIBLE - if this is checked the trigger itself will be visible
+TOUCHABLE - if this is set we can activate the trigger by standing in it.
+CONTINUOUS - if this is checked the thing will re-trigger continously, otherwise
+it waits until the player has left the trigger field.
+
+******************************************************************************/
+
+
+/*QUAKED func_useobject (0 0.5 0) ? MULTI-STATE
+
+Allows you to setup a special object that places the player into a specific state
+sequence.  Primarily used for levers and cranks.  
+
+Object starts out in the "start" animation, when used the following occurs:
+
+It is determined whether or not the player is in the right position to activate
+the object, if it is, the player is moved to the exact offset and angle specified
+by "offset" and "yaw_offset".  The right position is determined by a dot product
+with "offset" and "yaw_offset".  The "cone" parameter controls the cone in which the
+object can be triggered. Once the player is in the right position, the player is placed
+into "state" and the "move" animation is played. Once the player animation ends, the
+"move_thread" will be called.  If the use button is continued to be held down and count
+is not finite, the animation will be continued to be played until the use key is held
+down.  Once the use key is let go, the "stop" animation will be played on the lever and
+the "stop_thread" will be called.
+
+"activate" - turns the useobject on
+"deactivate" - turns the useobject off
+"offset" - vector offset of where the player should stand
+"state" - state to go into when used
+"state_backwards" - what state to use when reversing the object
+"yaw_offset" - what direction the player should be facing when using the object
+"cone" - the cone in which the object can be used
+"count" - how many times this should trigger (default -1, infinite)
+"move_thread" - thread that is fired when the object has cycled one animation
+"stop_thread" - thread that is fired when the object has finished animating
+"reset_thread" - thread that is fired when the object is resetting itself
+"reset_time" - the time it takes for the object to reset, (default 0, it doesn't)
+"triggertarget" - target to trigger when finished animating, if reset_time is set, target
+will be fired again when resetting
+"damage_type" - if set, can be triggered by using a weapon to activate it.  If set to "all",
+any damage will activate it.
+
+MULTI-STATE - the object has two different states and must be used each time to set the state
+when multi state is active, the reset_thread is called instead of stop_thread.  All UseObjects
+have two states on and off.  When reset_time is set, the object will automatically return to the 
+off state after a preset amount of time.  When multi-state is set this must be done manually.
+
+******************************************************************************/
+
+
+/*QUAKED info_waypoint (0 0.5 0) (-8 -8 -8) (8 8 8)
+
+Used as a positioning device for objects
+
+******************************************************************************/
+
+
+/*QUAKED func_monkeybars (0.75 0.75 0.75) ?
+
+Monkey bars
+
+******************************************************************************/
+
+
+/*QUAKED func_horizontalpipe (0.75 0.75 0.75) ?
+
+Horizontal pipe that play can crawl upside down on.
+
+******************************************************************************/
+
+
+/*QUAKED func_pushobject (0.75 0.75 0.75) ?
+
+Pushable object
+
+"dmg" how much damage to cause when blocked.  (default 2)
+"pushsound" Sound to play when object is pushed (default is none)
+
+******************************************************************************/
+
+
+/*QUAKED func_fallingrock (0.75 0.75 0.75) ? AUTO_RESET NO_RANDOMNESS REMOVE_ON_GROUND
+
+Creates a rock that, when triggered, begins falling and bounces along a path
+specified by targetname.  Use info_waypoint for the path.
+
+"targetname" the path to follow.
+"dmg" how much damage to cause creatures it hits (default 20).
+"speed" how fast to move (default 200).
+"wait" how long to wait before falling when triggered (default 0).
+"noise" sound to play when rock touches the world
+
+AUTO_RESET - when done falling, automatically return to the start
+NO_RANDOMNESS - don't use any randomness when making the rocks fall
+REMOVE_ON_GROUND - remove the rocks when done
+
+******************************************************************************/
+
+
+/*QUAKED func_supplywater (0.75 0.75 0.75) ? x x NOT_PLAYERS MONSTERS PROJECTILES
+
+Creates a trigger than when touched gives the player water over a continuous time
+
+"wait" - how long to wait before re-triggering ( default 0.1 seconds )
+"amount" - how much water to give player on each trigger ( default 1 unit )
+"maxwater" - what the maximum amount of water this supply should charge the player to ( default 50 )
+
+If NOT_PLAYERS is set, the trigger does not respond to players
+If MONSTERS is set, the trigger will respond to monsters
+If PROJECTILES is set, the trigger will respond to projectiles (rockets, grenades, etc.)
+
+******************************************************************************/
+
+
+/*QUAKED func_emitter (0 0.25 0.5) ?
+
+"emitter" - Name of emitter to use.
+******************************************************************************/
+
+
+/*QUAKED func_rain (0 0.25 0.5) ?
+
+This creates a raining effect in the brush
+
+"emitter" - Name of emitter to use for the rain.
+******************************************************************************/
+
+
+/*QUAKED info_pathnode (1 0 0) (-24 -24 0) (24 24 32) FLEE DUCK COVER DOOR JUMP LADDER
+
+FLEE marks the node as a safe place to flee to.  Actor will be removed when it reaches a flee node and is not visible to a player.
+
+DUCK marks the node as a good place to duck behind during weapon fire.
+
+COVER marks the node as a good place to hide behind during weapon fire.
+
+DOOR marks the node as a door node.  If an adjacent node has DOOR marked as well, the actor will only use the path if the door in between them is unlocked.
+
+JUMP marks the node as one to jump from when going to the node specified by target.
+"target" the pathnode to jump to.
+
+******************************************************************************/
+
+
+/*QUAKED func_throwobject (0 0.25 0.5) (-16 -16 0) (16 16 32)
+
+This is an object you can pickup and throw at people
+******************************************************************************/
+
+
+/*QUAKED info_player_start (0.75 0.75 0) (-16 -16 0) (16 16 96)
+
+The normal starting point for a level.
+
+"angle" - the direction the player should face
+"thread" - the thread that should be called when spawned at this position
+
+******************************************************************************/
+
+
+/*QUAKED info_player_deathmatch (0.75 0.75 1) (-16 -16 0) (16 16 96)
+
+potential spawning position for deathmatch games
+
+"angle" - the direction the player should face
+"thread" - the thread that should be called when spawned at this position
+
+******************************************************************************/
+
+
+/*QUAKED info_player_intermission (0.75 0.75 0) (-16 -16 0) (16 16 96)
+
+viewing point in between deathmatch levels
+
+******************************************************************************/
+
+
+/*QUAKED portal_surface (1 0 1) (-8 -8 -8) (8 8 8)
+The portal surface nearest this entity will show a view from the targeted portal_camera, or a mirror view if untargeted.
+*/
+
+
+/*QUAKED portal_camera (1 0 1) (-8 -8 -8) (8 8 8) slowrotate fastrotate
+The target for a portal_surface.  You can set either angles or target another entity to determine the direction of view.
+"roll" an angle modifier to orient the camera around the target vector;
+*/
+
+
+/*QUAKED func_rope (0.0 0.25 0.5) ?
+
+The rope is defined by a bounding box.  The top of the box denotes the top of the rope and
+the bottom of the rope is denoted by the bottom of the box.  The width of the box determines
+the trigger field in which the player will hang on to the rope when grabbing it.
+
+"ropeshader" : Name of the shader to use to render the rope (default is "ropeshader")
+*/
+
+
+/*QUAKED func_rope_piece (0.0 0.25 0.5) (-16 -16 -16) (16 16 16) WIGGLE ATT_WIGGLE
+Rope Piece - A single piece of a rope
+
+WIGGLE : Makes this piece of the rope wiggle about randomly. Only does this while not attached.
+
+ATT_WIGGLE : Makes this piece of the rope wiggle around even while attached. WIGGLE must also be marked for this to work.
+
+"target" : the "targetname" of the next piece in the rope. This should be blank if it's the last piece in the rope.
+If a non-rope_piece entity is targeted, it will attach itself to it.
+
+"targetname" : used for the previous piece in the rope to find and link to this piece of the rope.
+
+"target2" : the targetname of the entity to attach this piece of the rope to.
+Any piece of a rope can be attached to something and be triggered at any time to detach it.
+Triggering the base of an attached rope will detach all attached points on that rope.
+
+"wigglemove" : the amount of force the random wiggling has. 
+    Default = 32
+
+"wiggletime" : number of seconds between each time the rope wiggles.
+    Default = 0.5
+
+All other settings are set in the rope's rope_base entity.
+*/
+
+
+/*QUAKED func_rope_base (0.0 0.25 0.5) (-16 -16 -16) (16 16 16) START_STILL
+Rope Base - the main control and top end attachment entity for ropes
+
+This entity is the point to where ropes attach their top end. It's a stationary point entity.
+All setting for the whole rope are specified through this entity.
+If you want/need to trigger a rope to do something, then this is the entity to trigger.
+Trying to trigger a rope_piece will do nothing.
+
+START_STILL : Specifies that the whole rope will be completely stationary untill it is either triggered, or grabbed.
+
+"targetname" : The name that the rope is triggered with.
+
+"target" : The "targetname" of the first rope_piece in the rope.
+
+"piecelength" : The distance between each piece of the rope.
+    Default = 24
+
+"piecemodel" : The model to use for the rope pieces.
+
+"ropedampener" : Horizontal velocity dampener for the rope.
+	Default = 0.8
+
+"stiffness" : Movement restricter on the amount that the rope can flex and bend. 
+Valid values are from -1 (no restriction) to 1 (tried to be perfectly straight.
+The position of the first rope piece determines what direction the rope is pushed from the base of the rope.
+	Default = -1
+
+"strength" : How strongly a stiff rope goes to position.
+    Default = 1;
+
+"attachmodel" : name of a model to attach onto this piece of rope
+
+"ropeshader" : Name of the shader to use to render the rope (default is "ropeshader")
+*/
+
+
+/*QUAKED script_object (0 0.5 1) ? NOT_SOLID
+
+******************************************************************************/
+
+
+/*QUAKED script_model (0 0.5 1) (0 0 0) (0 0 0) NOT_SOLID
+
+******************************************************************************/
+
+
+/*QUAKED script_origin (1.0 0 0) (-8 -8 -8) (8 8 8)
+
+Used as an alternate origin for objects.  Bind the object to the script_origin
+in order to simulate changing that object's origin.
+******************************************************************************/
+
+
+/*QUAKED script_skyorigin (1.0 0 0) ?
+
+Used to specify the origin of a portal sky
+******************************************************************************/
+
+
+/*QUAKED func_spawn(0 0.25 0.5) (-8 -8 -8) (8 8 8)
+"modelname" The name of the TIKI file you wish to spawn. (Required)
+"spawntargetname" This will be the targetname of the spawned model. (default is null)
+"spawntarget" This will be the target of the spawned model. (default is null)
+"pickup_thread" passed on to the spawned model
+"key"       The item needed to activate this. (default nothing)
+"attackmode" Attacking mode of the spawned actor (default 0)
+******************************************************************************/
+
+
+/*QUAKED func_randomspawn(0 0.25 0.5) (-8 -8 -8) (8 8 8) START_OFF
+Randomly spawns an entity.  The time between spawns is determined by min_time and max_time
+The entity can be turned off and on by triggering it
+"modelname"   The name of the TIKI file you wish to spawn. (Required)
+"key"         The item needed to activate this. (default nothing)
+"min_time" The minimum time between spawns (default 0.2 seconds)
+"max_time" The maximum time between spawns (default 1 seconds)
+START_OFF - spawn is off by default
+******************************************************************************/
+
+
+/*QUAKED func_respawn(0 0.25 0.5) (-8 -8 -8) (8 8 8)
+When the thing that is spawned is killed, this func_respawn will get
+triggered.
+"modelname"   The name of the TIKI file you wish to spawn. (Required)
+"key"         The item needed to activate this. (default nothing)
+******************************************************************************/
+
+
+/*QUAKED func_spawnoutofsight(0 0.25 0.5) (-8 -8 -8) (8 8 8)
+Will only spawn something out of sight of its targets.
+"modelname"   The name of the TIKI file you wish to spawn. (Required)
+"spawntargetname" This will be the targetname of the spawned model. (default is null)
+"spawntarget" This will be the target of the spawned model. (default is null)
+"key"         The item needed to activate this. (default nothing)
+******************************************************************************/
+
+
+/*QUAKED func_spawnchain(0 0.25 0.5) (-8 -8 -8) (8 8 8)
+Tries to spawn something out of the sight of players.  If it fails, it will
+trigger its targets.
+"modelname"   The name of the TIKI file you wish to spawn. (Required)
+"spawntargetname" This will be the targetname of the spawned model. (default is null)
+"spawntarget" This will be the target of the spawned model. (default is null)
+"key"         The item needed to activate this. (default nothing)
+******************************************************************************/
+
+
+/*QUAKED func_fulcrum (0 0 1) ? X_AXIS_ONLY Y_AXIS_ONLY
+
+This creates a fulcrum that when you stand on it, it will rotate due to 
+the weight exerted it will start rotating, when not standing on it, it 
+will return to its rest position.
+"speed" - set the speed at which the fulcrum will operate (default is 48)
+"resetspeed" - speed at whcih fulcrum resets, (default speed * 0.002)
+"dampening" - dampen constant (default 0.95)
+"limit" - limit the movement of the fulcrum (default 90 degrees)
+"movesound" - sound to be played while fulcrum is moving
+
+X_AXIS_ONLY - only adjust the X axis
+Y_AXIS_ONLY - only adjust the Y axis
+
+******************************************************************************/
+
+
+/*QUAKED func_runthrough (0 0 1) ? 
+
+This is a trigger field that the player can run through and spawn tiki models
+at that position.  Used for releasing chaff from grass or butterflys from
+flower gardens
+"speed" - speed at which you have to be moving to trigger ( default 100 )
+"delay" - time between triggering ( default 0.1 )
+"chance" - chance that the trigger will spawn something( default 0.5 )
+"lip" - how far below the surface of the trigger we should spawn these things ( default 3 )
+"offset" - vector offset oriented along velocity vector( default "0 0 0" )
+"spawnmodel" - thing to spawn when triggered
+
+******************************************************************************/
+
+
+/*QUAKED func_sinkobject (0 0 1) ? x FALLAWAY NO_RESET 
+
+This creates an object which gradually sinks downward when stepped on.
+"delay" - delay between when object starts reacting towards weight (default 0 seconds)
+"speed" - set the speed at which sinkobject sinks (default is 50)
+"resetspeed" - speed at which sinkobject resets its position, (default speed * 0.1)
+"dampening" - dampening constant to mitigate acceleration (default 0.95)
+"limit" - limit the movement of the sinkobject how far down it should go (default 1000 units)
+"resetdelay" - time between player gets off platform, and platform starts resetting itself.
+"sinksound" - sound to be played while platform is sinking.
+"resetsound" - sound to be played while platform is resetting.
+"active" - make the sink object active
+"notactive" - make the sink object not active
+
+FALLAWAY - the sink object will progressively fall down faster and faster
+NO_RESET - the sink object will not reset, only move downward
+
+******************************************************************************/
+
+
+/*QUAKED trigger_multiple (1 0 0) ? x x NOT_PLAYERS MONSTERS PROJECTILES
+
+Variable sized repeatable trigger.  Must be targeted at one or more entities.
+
+If "health" is set, the trigger must be killed to activate each time.
+If "delay" is set, the trigger waits some time after activating before firing.
+
+"thread" name of thread to trigger.  This can be in a different script file as well\
+by using the '::' notation.
+
+if "angle" is set, the trigger will only fire when someone is facing the
+direction of the angle.
+"cone" the cone in which a directed trigger can be triggered (default 60 degrees)
+
+"wait" : Seconds between triggerings. (.2 default)
+"cnt" how many times it can be triggered (infinite default)
+
+"triggerable" turn trigger on
+"nottriggerable" turn trigger off
+
+If NOT_PLAYERS is set, the trigger does not respond to players
+If MONSTERS is set, the trigger will respond to monsters
+If PROJECTILES is set, the trigger will respond to projectiles (rockets, grenades, etc.)
+
+set "message" to text string
+
+******************************************************************************/
+
+
+/*QUAKED trigger_once (1 0 0) ? NOTOUCH x NOT_PLAYERS MONSTERS PROJECTILES
+
+Variable sized trigger. Triggers once, then removes itself.
+You must set the key "target" to the name of another object in the
+level that has a matching
+
+If "health" is set, the trigger must be killed to activate it.
+If "delay" is set, the trigger waits some time after activating before firing.
+
+"targetname".  If "health" is set, the trigger must be killed to activate.
+
+"thread" name of thread to trigger.  This can be in a different script file as well\
+by using the '::' notation.
+
+if "killtarget" is set, any objects that have a matching "target" will be
+removed when the trigger is fired.
+
+if "angle" is set, the trigger will only fire when someone is facing the
+direction of the angle.
+"cone" the cone in which a directed trigger can be triggered (default 60 degrees)
+
+"key" The item needed to activate this. (default nothing)
+
+"triggerable" turn trigger on
+"nottriggerable" turn trigger off
+
+If NOTOUCH is set, trigger will not respond to touch
+If NOT_PLAYERS is set, the trigger does not respond to players
+If MONSTERS is set, the trigger will respond to monsters
+If PROJECTILES is set, the trigger will respond to projectiles (rockets, grenades, etc.)
+
+set "message" to text string
+
+******************************************************************************/
+
+
+/*QUAKED trigger_relay (1 0 0) (-8 -8 -8) (8 8 8) x x NOT_PLAYERS MONSTERS PROJECTILES
+
+This fixed size trigger cannot be touched, it can only be fired by other events.
+It can contain killtargets, targets, delays, and messages.
+
+If NOT_PLAYERS is set, the trigger does not respond to events triggered by players
+If MONSTERS is set, the trigger will respond to events triggered by monsters
+If PROJECTILES is set, the trigger will respond to events triggered by projectiles (rockets, grenades, etc.)
+
+******************************************************************************/
+
+
+/*QUAKED trigger_secret (1 0 0) ? NOTOUCH x NOT_PLAYERS MONSTERS PROJECTILES
+Secret counter trigger.  Automatically sets and increments script variables \
+level.total_secrets and level.found_secrets.
+
+set "message" to text string
+
+"key" The item needed to activate this. (default nothing)
+
+if "angle" is set, the trigger will only fire when someone is facing the
+direction of the angle.
+"cone" the cone in which a directed trigger can be triggered (default 60 degrees)
+
+"thread" name of thread to trigger.  This can be in a different script file as well \
+by using the '::' notation.  (defaults to "global/universal_script.scr::secret")
+
+"triggerable" turn trigger on
+"nottriggerable" turn trigger off
+
+If NOTOUCH is set, trigger will not respond to touch
+If NOT_PLAYERS is set, the trigger does not respond to players
+If MONSTERS is set, the trigger will respond to monsters
+If PROJECTILES is set, the trigger will respond to projectiles (rockets, grenades, etc.)
+
+******************************************************************************/
+
+
+/*QUAKED trigger_setvariable (1 0 0) ? NOTOUCH LEVEL NOT_PLAYERS MONSTERS PROJECTILES 
+
+Sets a variable specified by "variable" and "value".
+Variable is assumed to be of the "global" variety unless LEVEL is set.
+Variable sized trigger. Triggers once by default.
+You must set the key "target" to the name of another object in the
+level that has a matching
+
+"variable" - variable to set
+"value" - value to set in variable, value can also be one of the following reserved\
+tokens.
+   - "increment" - add one to the variable
+   - "decrement" - subtract one from the variable
+   - "toggle" - if 1, then zero.  If zero then 1.
+
+If "health" is set, the trigger must be killed to activate it.
+If "delay" is set, the trigger waits some time after activating before firing.
+
+"targetname".  If "health" is set, the trigger must be killed to activate.
+
+"thread" name of thread to trigger.  This can be in a different script file as well\
+by using the '::' notation.
+
+if "killtarget" is set, any objects that have a matching "target" will be
+removed when the trigger is fired.
+
+if "angle" is set, the trigger will only fire when someone is facing the
+direction of the angle.
+"cone" the cone in which a directed trigger can be triggered (default 60 degrees)
+
+"key" The item needed to activate this. (default nothing)
+
+"triggerable" turn trigger on
+"nottriggerable" turn trigger off
+
+If NOTOUCH is set, trigger will not respond to touch
+if LEVEL is set, variable will be a level variable otherwise it will be a game variable
+If NOT_PLAYERS is set, the trigger does not respond to players
+If MONSTERS is set, the trigger will respond to monsters
+If PROJECTILES is set, the trigger will respond to projectiles (rockets, grenades, etc.)
+
+set "message" to text string
+
+******************************************************************************/
+
+
+/*QUAKED trigger_push (1 0 0) ? x x NOT_PLAYERS NOT_MONSTERS NOT_PROJECTILES
+
+Pushes entities as if they were caught in a heavy wind.
+
+"speed" indicates the rate that entities are pushed (default 1000).
+
+"angle" indicates the direction the wind is blowing (-1 is up, -2 is down)
+
+"key" The item needed to activate this. (default nothing)
+
+"target" if target is set, then a velocity will be calculated based on speed
+
+"triggerable" turn trigger on
+"nottriggerable" turn trigger off
+
+If NOT_PLAYERS is set, the trigger does not push players
+If NOT_MONSTERS is set, the trigger will not push monsters
+If NOT_PROJECTILES is set, the trigger will not push projectiles (rockets, grenades, etc.)
+
+******************************************************************************/
+
+
+/*QUAKED trigger_pushany (1 0 0) ? x x NOT_PLAYERS NOT_MONSTERS NOT_PROJECTILES
+
+Pushes entities as if they were caught in a heavy wind.
+
+"speed" indicates the rate that entities are pushed (default 1000).
+"angles" indicates the direction of the push
+"key" The item needed to activate this. (default nothing)
+"target" if target is set, then a velocity will be calculated based on speed
+
+"triggerable" turn trigger on
+"nottriggerable" turn trigger off
+
+If NOT_PLAYERS is set, the trigger does not push players
+If NOT_MONSTERS is set, the trigger will not push monsters
+If NOT_PROJECTILES is set, the trigger will not push projectiles (rockets, grenades, etc.)
+
+******************************************************************************/
+
+
+/*QUAKED sound_speaker (0 0.75 0.75) (-8 -8 -8) (8 8 8) AMBIENT-ON AMBIENT-OFF NOT_PLAYERS MONSTERS PROJECTILES TOGGLE
+
+play a sound when it is used
+
+AMBIENT-ON specifies an ambient sound that starts on
+AMBIENT-OFF specifies an ambient sound that starts off
+TOGGLE specifies that the speaker toggles on triggering
+
+if (AMBIENT-?) is not set, then the sound is sent over explicitly this creates more net traffic
+
+"volume" how loud 0-4 (1 default full volume, ambients do not respond to volume)
+"noise" sound to play
+"channel" channel on which to play sound\
+(0 auto, 1 weapon, 2 voice, 3 item, 4 body, 8 don't use PHS) (voice is default)
+"key" The item needed to activate this. (default nothing)
+"thread" name of thread to trigger.  This can be in a different script file as well\
+by using the '::' notation.
+
+Normal sounds play each time the target is used.
+
+Ambient Looped sounds have a volume 1, and the use function toggles it on/off.
+
+If NOT_PLAYERS is set, the trigger does not respond to players
+If MONSTERS is set, the trigger will respond to monsters
+If PROJECTILES is set, the trigger will respond to projectiles (rockets, grenades, etc.)
+
+******************************************************************************/
+
+
+/*QUAKED sound_randomspeaker (0 0.75 0.75) (-8 -8 -8) (8 8 8) x x NOT_PLAYERS MONSTERS PROJECTILES x x
+
+play a sound at random times
+
+"mindelay" minimum delay between sound triggers (default 3)
+"maxdelay" maximum delay between sound triggers (default 10)
+"chance" chance that sound will play when fired (default 1)
+"volume" how loud 0-4 (1 default full volume)
+"noise" sound to play
+"channel" channel on which to play sound\
+(0 auto, 1 weapon, 2 voice, 3 item, 4 body, 8 don't use PHS) (voice is default)
+"key"          The item needed to activate this. (default nothing)
+
+Normal sounds play each time the target is used.
+
+If NOT_PLAYERS is set, the trigger does not respond to players
+If MONSTERS is set, the trigger will respond to monsters
+If PROJECTILES is set, the trigger will respond to projectiles (rockets, grenades, etc.)
+
+******************************************************************************/
+
+
+/*QUAKED trigger_changelevel (1 0 0) ? NO_INTERMISSION x NOT_PLAYERS MONSTERS PROJECTILES
+
+When the player touches this, he gets sent to the map listed in the "map" variable.
+Unless the NO_INTERMISSION flag is set, the view will go to the info_intermission
+spot and display stats.
+
+"spawnspot"  name of the spawn location to start at in next map.
+"key"          The item needed to activate this. (default nothing)
+"thread" This defaults to "LevelComplete" and should point to a thread that is called just
+before the level ends.
+
+"triggerable" turn trigger on
+"nottriggerable" turn trigger off
+
+If NOT_PLAYERS is set, the trigger does not respond to players
+If MONSTERS is set, the trigger will respond to monsters
+If PROJECTILES is set, the trigger will respond to projectiles (rockets, grenades, etc.)
+
+******************************************************************************/
+
+
+/*QUAKED trigger_use (1 0 0) ? VISIBLE x NOT_PLAYERS MONSTERS
+
+Activates targets when 'used' by an entity
+"key"          The item needed to activate this. (default nothing)
+"thread" name of thread to trigger.  This can be in a different script file as well\
+by using the '::' notation.
+
+"triggerable" turn trigger on
+"nottriggerable" turn trigger off
+
+If NOT_PLAYERS is set, the trigger does not respond to players
+If MONSTERS is set, the trigger will respond to monsters
+
+******************************************************************************/
+
+
+/*QUAKED trigger_useonce (1 0 0) ? VISIBLE x NOT_PLAYERS MONSTERS
+
+Activates targets when 'used' by an entity, but only once
+"key"          The item needed to activate this. (default nothing)
+"thread" name of thread to trigger.  This can be in a different script file as well\
+by using the '::' notation.
+
+"triggerable" turn trigger on
+"nottriggerable" turn trigger off
+
+If NOT_PLAYERS is set, the trigger does not respond to players
+If MONSTERS is set, the trigger will respond to monsters
+
+******************************************************************************/
+
+
+/*QUAKED trigger_hurt (1 0 0) ? x x NOT_PLAYERS NOT_MONSTERS PROJECTILES
+
+"damage" amount of damage to cause. (default 10)
+"key"          The item needed to activate this. (default nothing)
+"damagetype" what kind of damage should be given to the player. (default CRUSH)
+
+"triggerable" turn trigger on
+"nottriggerable" turn trigger off
+
+If NOT_PLAYERS is set, the trigger does not hurt players
+If NOT_MONSTERS is set, the trigger does not hurt monsters
+If PROJECTILES is set, the trigger will hurt projectiles (rockets, grenades, etc.)
+
+******************************************************************************/
+
+
+/*QUAKED trigger_damagetargets (1 0 0) ? SOLID x NOT_PLAYERS NOT_MONSTERS PROJECTILES
+
+"damage" amount of damage to cause. If no damage is specified, objects\
+are damaged by the current health+1
+
+"key"          The item needed to activate this. (default nothing)
+
+if a trigger_damagetargets is shot at and the SOLID flag is set,\
+the damage is passed on to the targets
+
+"triggerable" turn trigger on
+"nottriggerable" turn trigger off
+
+If NOT_PLAYERS is set, the trigger does not hurt players
+If NOT_MONSTERS is set, the trigger does not hurt monsters
+If PROJECTILES is set, the trigger will hurt projectiles (rockets, grenades, etc.)
+
+******************************************************************************/
+
+
+/*QUAKED trigger_camerause (1 0 0) ? VISIBLE x NOT_PLAYERS MONSTERS
+
+Activates 'targeted' camera when 'used'
+If activated, toggles through cameras
+"key"          The item needed to activate this. (default nothing)
+"thread" name of thread to trigger.  This can be in a different script file as well\
+by using the '::' notation.
+
+"triggerable" turn trigger on
+"nottriggerable" turn trigger off
+
+If NOT_PLAYERS is set, the trigger does not respond to players
+If MONSTERS is set, the trigger will respond to monsters
+
+******************************************************************************/
+
+
+/*QUAKED trigger_exit (1 0 0) ?
+
+When the player touches this, an exit icon will be displayed in his hud.
+This is to inform him that he is near an exit.
+
+"triggerable" turn trigger on
+"nottriggerable" turn trigger off
+
+******************************************************************************/
+
+
+/*QUAKED trigger_music (1 0 0) ? NORMAL ACTION NOT_PLAYERS MONSTERS PROJECTILES SUSPENSE MYSTERY SURPRISE
+
+Variable sized repeatable trigger to change the music mood.  
+
+If "delay" is set, the trigger waits some time after activating before firing.
+"current" can be used to set the current mood
+"fallback" can be used to set the fallback mood
+"altcurrent" can be used to set the current mood of the opposite face, if multiFaceted
+"altfallback" can be used to set the fallback mood of the opposite face, if multiFaceted
+"edgeTriggerable" trigger only fires when entering a trigger
+"multiFaceted" if 1, then trigger is North/South separate triggerable\
+if 2, then trigger East/West separate triggerable
+
+"thread" name of thread to trigger.  This can be in a different script file as well\
+by using the '::' notation.
+"wait" : Seconds between triggerings. (1.0 default)
+"cnt" how many times it can be triggered (infinite default)
+"oneshot" make this a one time trigger
+
+"triggerable" turn trigger on
+"nottriggerable" turn trigger off
+
+If NOT_PLAYERS is set, the trigger does not respond to players
+If MONSTERS is set, the trigger will respond to monsters
+If PROJECTILES is set, the trigger will respond to projectiles (rockets, grenades, etc.)
+
+NORMAL, ACTION, SUSPENSE, MYSTERY, and SURPRISE are the moods that can be triggered
+
+******************************************************************************/
+
+
+/*QUAKED trigger_reverb (1 0 0) ? x x NOT_PLAYERS MONSTERS PROJECTILES
+
+Variable sized repeatable trigger to change the reverb level in the game
+
+If "delay" is set, the trigger waits some time after activating before firing.
+"reverbtype" what kind of reverb should be used
+"reverblevel" how much of the reverb effect should be applied
+"altreverbtype" what kind of reverb should be used
+"altreverblevel" how much of the reverb effect should be applied
+"edgeTriggerable" trigger only fires when entering a trigger
+"multiFaceted" if 1, then trigger is North/South separate triggerable\
+if 2, then trigger East/West separate triggerable
+
+"thread" name of thread to trigger.  This can be in a different script file as well\
+by using the '::' notation.
+"wait" : Seconds between triggerings. (1.0 default)
+"cnt" how many times it can be triggered (infinite default)
+"oneshot" make this a one time trigger
+
+"triggerable" turn trigger on
+"nottriggerable" turn trigger off
+
+If NOT_PLAYERS is set, the trigger does not respond to players
+If MONSTERS is set, the trigger will respond to monsters
+If PROJECTILES is set, the trigger will respond to projectiles (rockets, grenades, etc.)
+
+******************************************************************************/
+
+
+/*QUAKED trigger_pushobject (1 0 0) ? 
+Special trigger that can only be triggered by a push object.
+
+"triggername" if set, trigger only responds to objects with a targetname the same as triggername.
+"cnt" how many times it can be triggered (default 1, use -1 for infinite)
+******************************************************************************/
+
+
+/*QUAKED trigger_givepowerup (1 0 0) ? x x NOT_PLAYERS MONSTERS x
+
+Variable sized repeatable trigger to give a powerup to the player
+
+"oneshot" makes this triggerable only once
+"powerupname" sets the name of the powerup to give to the player
+
+If NOT_PLAYERS is set, the trigger does not respond to players
+If MONSTERS is set, the trigger will respond to monsters
+
+******************************************************************************/
+
+
+/*QUAKED worldspawn (0 0 0) ? CINEMATIC
+
+Only used for the world.
+
+"soundtrack" the soundtrack to use on the map
+"gravity"	 800 is default gravity
+"skipthread" thread that is activated to skip this level (if cinematic)
+"nextmap"    map to goto when player exits
+"message"	 text to print at user logon
+"script"	    script to run on start of map
+"watercolor" view color when underwater
+"wateralpha" view alpha when underwater
+"lavacolor"  view alpha when in lava
+"lavaalpha"  view alpha when in lava
+"farplane_color" color to fade to when the far clip plane is on
+"farplane_cull" whether or not the far plane should cull, default is yes
+"farplane"   distance from the viewer that the far clip plane is
+"ambientlight" ambient lighting to be applied to all entities
+"ambient"    ambient lighting to be applied to all entities, use _color to specify color
+"suncolor"   color of the sun in the level
+"sunlight"   intensity of the sun in the level
+"sundirection" direction of the sun in the level
+"sunflare"   worldspace position of the sun flare
+"sunflare_inportalsky" whether or not the flare is in the portal sky
+"lightmapdensity" default lightmap density to be used for all surfaces
+"skyalpha"   initial value of the sky's alpha, defaults to 1
+
+******************************************************************************/
+
+

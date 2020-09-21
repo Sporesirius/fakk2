@@ -1,0 +1,16 @@
+waitforplayer
+//fadeout 3 0 0 0 1
+//wait 3
+//clearfade
+
+top:
+wait 5
+$beam activate
+//fadeout 2 1 1 1 1
+letterbox 1
+wait 8
+$beam deactivate
+clearletterbox 1
+//fadein 2 1 1 1 1
+goto top
+end

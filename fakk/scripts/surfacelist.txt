@@ -1,0 +1,750 @@
+blood/bloodchains m
+blood/blooddoor m
+blood/bloodmetal m
+blood/bloodtile m
+blood/bloodtrim1 m
+blood/bloodtrim2 m
+blood/bloodtrim3 m
+blood/bloodtrim4 m
+blood/bloodwall m
+blood/bloodwall1 m
+blood/bloodwall2 m
+blood/bloodwall3 m
+
+creeperpens/edenbarn w
+creeperpens/edenbarn2 w
+creeperpens/edenbarn3 w
+creeperpens/edenbarnceil w
+creeperpens/edenbarnroof w
+creeperpens/edenbarnroofend w
+creeperpens/edenhay o
+creeperpens/edenhaybale o
+creeperpens/edenhaybale2 o
+creeperpens/edenhaybale3 o
+creeperpens/edenwoodfloor w
+creeperpens/FL_creepershit s
+creeperpens/FL_pens_base d
+creeperpens/fl_pens_base2 d 
+creeperpens/FL_pens_outside d
+creeperpens/FL_shit_decal o
+creeperpens/FL_shit_trans o
+creeperpens/FL_street2_pens d
+creeperpens/FL_street3_pens d
+creeperpens/tr_grate g
+creeperpens/TR_pens m
+creeperpens/TR_pooshoot m
+creeperpens/wl_astroid r
+creeperpens/wl_astroid2 r
+creeperpens/wl_barnwindow w
+creeperpens/WL_basement_2 r
+creeperpens/WL_basement_3 r
+creeperpens/WL_basement_trans r
+creeperpens/WL_dungbindoor w
+creeperpens/WL_hay_trans o
+creeperpens/WL_pens_insidedoor m
+creeperpens/WL_pens_outsidedoor m
+creeperpens/WL_pens_outsidedoorback w
+creeperpens/WL_pensgate m
+
+eden/base m
+eden/basicwall r
+eden/basicwallbroke r
+eden/bedtrim w
+eden/blue_water
+eden/blue_water_envmap
+eden/CL_church r
+eden/CL_edenroof m
+eden/CL_edenroof2 m
+eden/CL_edenroof3 r
+eden/CL_edenroof4 m
+eden/CL_edenroof5 m
+eden/CL_redroof m
+eden/creeperwall r
+eden/creeperwall2 r
+eden/door8 w
+eden/eden_envmap1
+eden/eden_envmap1_bak
+eden/eden_envmap2
+eden/eden_envmap2_bak
+eden/eden_envmap2_bak2
+eden/eden_fakkhouseenvmap
+eden/edenbricks r
+eden/edencabinets w
+eden/edencobble r
+eden/edendoor m
+eden/edendoor2 w
+eden/edendoorwide m
+eden/edenfanwall m
+eden/edenfence m
+eden/edenfence2 m
+eden/edenfloor w
+eden/edengate m
+eden/edenmetal1 m
+eden/edenmetal10 m
+eden/edenmetal11 m
+eden/edenmetal2 m
+eden/edenmetal3 m
+eden/edenmetal4 m
+eden/edenmetal5 m
+eden/edenmetal6 m
+eden/edenmetal7 m
+eden/edenmetal8 m
+eden/edenmetal9 m
+eden/edenmetalwall m
+eden/edenmetalwall2 m
+eden/edenmetalwall2end m
+eden/edenrock r
+eden/edenrockdark r
+eden/edenrockmid r
+eden/edenstair m
+eden/edenstair2 m
+eden/edentable w
+eden/edentile r
+eden/edenvent m
+eden/edenwalltran m
+eden/edenwater1 
+eden/edenwriting m
+eden/FL_basement r
+eden/FL_basement2 r
+eden/FL_chainfloor g
+eden/FL_edenhouse w
+eden/FL_edenhouse2 w
+eden/FL_edenhouse3 w
+eden/FL_edenhouse4 w
+eden/FL_edenhousez w
+eden/FL_grass o
+eden/FL_ground d
+eden/FL_groundwhite r
+eden/FL_sheiekpens o
+eden/FL_street1 r
+eden/FL_street2 d
+eden/FL_street3 d
+eden/FL_street4 d
+eden/FL_street5 d
+eden/FL_underground r
+eden/FL_underground2 r
+eden/FL_woodchips o
+eden/FL_yw_trans r
+eden/floortile r
+eden/fountain r
+eden/fountainglow
+eden/genmetal m
+eden/genmetal_shiney m
+eden/genmetal_1 m
+eden/genmetal_1_shiney m
+eden/genmetal_2 m
+eden/genmetal_2_shiney m
+eden/genmetal_3 m
+eden/genmetal_3_shiney m
+eden/housetrim m
+eden/hybridrock
+eden/ivy
+eden/ivybig
+eden/lt_edenlt.glow
+eden/LT_edenlt1 m
+eden/LT_edenlt10 m
+eden/LT_edenlt10b m
+eden/LT_edenlt10w m
+eden/LT_edenlt11 m
+eden/LT_edenlt11b m
+eden/LT_edenlt11w m
+eden/LT_edenlt12 m
+eden/LT_edenlt12b m
+eden/LT_edenlt12w m
+eden/LT_edenlt13 m
+eden/LT_edenlt13b m
+eden/LT_edenlt13w m
+eden/LT_edenlt14 m
+eden/LT_edenlt14b m
+eden/LT_edenlt14w m
+eden/LT_edenlt15 m
+eden/LT_edenlt15b m
+eden/LT_edenlt15w m
+eden/LT_edenlt16 m
+eden/LT_edenlt16b m
+eden/LT_edenlt16w m
+eden/LT_edenlt17 m
+eden/LT_edenlt17b m
+eden/LT_edenlt17w m
+eden/LT_edenlt18 m
+eden/LT_edenlt18b m
+eden/LT_edenlt18v m
+eden/LT_edenlt18w m
+eden/LT_edenlt19.glow
+eden/LT_edenlt19 m
+eden/LT_edenlt19b m
+eden/LT_edenlt19g m
+eden/LT_edenlt19lb m
+eden/LT_edenlt19p m
+eden/LT_edenlt19w m
+eden/LT_edenlt1b m
+eden/LT_edenlt1w m
+eden/LT_edenlt2 m
+eden/LT_edenlt20 m
+eden/LT_edenlt20b m
+eden/LT_edenlt20w m
+eden/LT_edenlt21 m
+eden/LT_edenlt21b m
+eden/LT_edenlt21w m
+eden/LT_edenlt22 m
+eden/LT_edenlt22b m
+eden/LT_edenlt22w m
+eden/LT_edenlt23 m
+eden/LT_edenlt23b m
+eden/LT_edenlt23w m
+eden/LT_edenlt24 m
+eden/LT_edenlt24b m
+eden/LT_edenlt24w m
+eden/LT_edenlt2b m
+eden/LT_edenlt2w m
+eden/LT_edenlt3 m
+eden/LT_edenlt3b m
+eden/LT_edenlt3w m
+eden/LT_edenlt4 m
+eden/LT_edenlt4b m
+eden/LT_edenlt4w m
+eden/LT_edenlt5 m
+eden/LT_edenlt5b m
+eden/LT_edenlt5w m
+eden/LT_edenlt6 m
+eden/LT_edenlt6b m
+eden/LT_edenlt6w m
+eden/LT_edenlt7 m
+eden/LT_edenlt7b m
+eden/LT_edenlt7w m
+eden/LT_edenlt8 m
+eden/LT_edenlt8b m
+eden/LT_edenlt8w m
+eden/LT_edenlt9 m
+eden/LT_edenlt9b m
+eden/LT_edenlt9w m
+eden/metalrib m
+eden/metaltrim m
+eden/nicechurchwall r
+eden/ornatetopwall m
+eden/ornatetrim1 m
+eden/ornatewall_weathered2 m
+eden/ornatewallweathered m
+eden/propellorwall m
+eden/pushcrate m
+eden/pushcrate_glow
+eden/qer_blue_water_scroll
+eden/qer_edenwater1
+eden/rock r
+eden/SI_training w
+eden/siding m
+eden/techdoor m
+eden/technowall m
+eden/technowall1 m
+eden/technowall2 m
+eden/technowall3 m
+eden/technowall4 m
+eden/technowall4_shiney m
+eden/technowall5 m
+eden/tile r
+eden/toprail r
+eden/TR_basement m
+eden/TR_basement_2 m
+eden/tr_chainlink g
+eden/TR_church r
+eden/TR_church_2 r
+eden/TR_church_3 r
+eden/TR_church_5 r
+eden/TR_church_fx
+eden/TR_church2_fx
+eden/TR_churchtrim_4 r
+eden/TR_edenwriting_glow
+eden/TR_garden_tarp o
+eden/TR_garden_tarp2 o
+eden/TR_inside_1 r
+eden/TR_laundry_1 s
+eden/TR_laundry_2 s
+eden/TR_laundry_3 s
+eden/TR_laundry_4 s
+eden/TR_laundry_5 s
+eden/TR_laundry_6 s
+eden/TR_market_sign w
+eden/TR_metal m
+eden/TR_metal2 m
+eden/TR_metal3 m
+eden/TR_metal4 m
+eden/TR_metal5 m
+eden/TR_metal6 m
+eden/TR_metal7 m
+eden/TR_metal8 m
+eden/TR_pole m
+eden/TR_redmetal m
+eden/TR_redmetal2 m
+eden/TR_redmetal3 m
+eden/TR_redmetal4 m
+eden/TR_roost_1 m
+eden/TR_roost_2 m
+eden/TR_roost_3 m
+eden/TR_roost_4 m
+eden/TR_roost_5 m
+eden/TR_roost_6 m
+eden/TR_roost_7 m
+eden/TR_roost_8 m
+eden/TR_roost_9 m
+eden/TR_spiderweb1
+eden/TR_spiderweb2
+eden/TR_spiderweb3
+eden/TR_stair_1 r
+eden/TR_stair_2 r
+eden/TR_support m
+eden/tr_trim.glow
+eden/WL_arch m
+eden/WL_arch1 r
+eden/WL_arch1_glow
+eden/WL_arch2 m
+eden/WL_basement m
+eden/WL_basement_1 m
+eden/WL_basement_2w r
+eden/WL_basement_transw r
+eden/WL_basement2 m
+eden/WL_basement3 m
+eden/WL_basement3_glow
+eden/WL_blinds
+eden/WL_blinds2
+eden/WL_brick r
+eden/WL_ch_back r
+eden/WL_ch_back2 r
+eden/WL_ch_back3 r
+eden/WL_church r
+eden/WL_church_1 r
+eden/WL_church_2 r
+eden/WL_church_2big r
+eden/WL_church_3 r
+eden/WL_church_detail r
+eden/WL_church_detail1 r
+eden/WL_church_detail2 r
+eden/WL_church_door r
+eden/WL_church_glass
+eden/WL_church_large m
+eden/WL_church_wood w
+eden/WL_church_wood2 w
+eden/WL_climb_slats w
+eden/WL_damaged r
+eden/WL_damaged2 r
+eden/WL_darkmetal_1 m
+eden/WL_darkmetal_2 m
+eden/WL_darkmetal_3 m
+eden/WL_doortops m
+eden/WL_dungbindoor w
+eden/WL_eden_darkstone r
+eden/WL_edenbrick r
+eden/WL_edendoor m
+eden/WL_edendoor1 m
+eden/WL_edendoor2 m
+eden/WL_edendoor2_unlocked m
+eden/WL_edendoor3 m
+eden/WL_edenhouse r
+eden/wl_edenhouse10 r
+eden/WL_edenhouse2 r
+eden/WL_edenhouse2w r
+eden/wl_edenhouse3 r
+eden/WL_edenhouse4 r
+eden/WL_edenhouse5 r
+eden/WL_edenhousew r
+eden/WL_edenred r
+eden/WL_edenred2 r
+eden/WL_edenred3 r
+eden/wl_edentown r
+eden/wl_edentown1 r
+eden/wl_edentown2 r
+eden/wl_fakkhousewindow g
+eden/WL_fan m
+eden/WL_fan2 m
+eden/WL_glass1 m
+eden/WL_glass2 m
+eden/WL_glass3 m
+eden/WL_glass4 m
+eden/WL_glass5 m
+eden/WL_gold(clean) m
+eden/WL_inside_1 m
+eden/WL_inside_2 m
+eden/WL_inside_3 m
+eden/WL_inside_4 m
+eden/WL_insidetrans_1 m
+eden/WL_insidetrans_4 m
+eden/WL_market o
+eden/WL_market_door w
+eden/WL_market_sides w
+eden/WL_market2 o
+eden/WL_market3 o
+eden/WL_neweden_1 r
+eden/WL_neweden_2 r
+eden/WL_neweden_4 r
+eden/WL_neweden_5 r
+eden/WL_neweden_7 r
+eden/WL_neweden_8 r
+eden/WL_neweden_ivy o
+eden/WL_neweden_ivycap o
+eden/WL_neweden_ivyoverhang o
+eden/WL_pullpit m
+eden/WL_redwood w
+eden/WL_rock r
+eden/WL_rock2 r
+eden/WL_rock3 r
+eden/WL_rock4 r
+eden/WL_rock5 r
+eden/WL_rock9 r
+eden/WL_target w
+eden/WL_tarpside m
+eden/WL_tarptop m
+eden/WL_udoor m
+eden/WL_underground1 m
+eden/wl_window_fhouse.blend
+eden/WL_window_fhouse m
+eden/wl_window1.blend
+eden/wl_window1 m
+eden/wl_window1_inside.blend
+eden/WL_window1_inside m
+eden/wl_window2.blend
+eden/WL_window2 m
+eden/wl_window2_inside.blend
+eden/WL_window2_inside m
+eden/wl_window3.blend
+eden/wl_window3 m
+eden/wl_window3_inside.blend
+eden/WL_window3_inside m
+eden/wl_window4.blend
+eden/WL_window4 m
+eden/wl_window4_inside.blend
+eden/WL_window4_inside m
+eden/WL_winerack w
+eden/WL_wood(dark) w
+eden/wood w
+eden/woodfloor w
+eden/woodpeg w
+
+metals/silvermetal m
+
+oracle/lighttrim1 m
+oracle/oraclekeys m
+oracle/oraclemonitor m
+oracle/oracletrim1 m
+oracle/oracletrim2 m
+oracle/oracletrim3 m
+oracle/oracletrim3a m
+oracle/oracletrim4 m
+oracle/oracletrim5 m
+oracle/oraclewall1 m
+oracle/oraclewall2 m
+oracle/oraclewall4 m
+oracle/oraclewall4_ship m
+oracle/oraclewall4_shipb m
+oracle/oraclewall5 m
+oracle/oraclewall5a m
+oracle/oraclewall5b m
+oracle/oraclewall5c m
+oracle/oraclewall6 m
+oracle/oraclewires m
+oracle/oraclewiresc m
+
+otto/bolthead m
+otto/otto_envmap1
+otto/ottocabinet m
+otto/ottocabinet2 m
+otto/ottocabinet3 m
+otto/ottocabinet3a m
+otto/ottocabinet4 m
+otto/ottocontrol m
+otto/ottocontrol2 m
+otto/ottocontrol3 m
+otto/ottocontrol4 m
+otto/ottocontrol5 m
+otto/ottocontrol6 m
+otto/ottocontrol7 m
+otto/ottocrate w
+otto/ottocrate2 w
+otto/ottocrate3 w
+otto/ottocrate4 m
+otto/ottocrate5 m
+otto/ottocrate6 m
+otto/ottocyl m
+otto/ottofloor m
+otto/ottogrnmetal m
+otto/ottogrnmetal2 m
+otto/ottolight m
+otto/ottometal m
+otto/ottopbeam w
+otto/ottopipe m
+otto/ottopipe2 m
+otto/ottoscrew m
+otto/ottoshop w
+otto/ottosign1 m
+otto/ottosign2 m
+otto/ottosign3 m
+otto/ottosign4 m
+otto/ottosign5 m
+otto/ottosign6 m
+otto/ottosign7 m
+otto/ottostair1 m
+otto/ottostair2 m
+otto/ottotrapdoor w
+otto/ottotrim1 m
+otto/ottotrim10 m
+otto/ottotrim11 m
+otto/ottotrim2 m
+otto/ottotrim3 m
+otto/ottotrim4
+otto/ottotrim5
+otto/ottotrim6 m
+otto/ottotrim7 m
+otto/ottotrim8 m
+otto/ottotrim9 m
+otto/ottowall1 m
+otto/ottowall2 m
+otto/ottowall3 m
+otto/ottowall4 m
+otto/ottowall5 m
+otto/ottowall5a m
+
+shield/chrome_env
+shield/elec_yellow1
+shield/elec_yellow2
+shield/elec_yellow3
+shield/metalfloor_wall_9b.glow
+shield/metalfloor_wall_9b
+shield/plasmadead
+shield/plasmaFE
+shield/shgen m
+shield/shgen02 m
+shield/shgen03 m
+shield/shgen04 m
+shield/shgen05
+shield/shgen06 m
+shield/shgen7
+shield/shield_light.glow
+shield/shield_light m
+shield/specialtrim m
+shield/specialtrim_pulse1
+shield/specialtrim_pulse2
+shield/technowall m
+shield/technowall2 m
+shield/technowall3 m
+shield/technowall4 m
+shield/technowall5 m
+
+swamps/CL_canopy(lowest) o
+swamps/CL_canopy(lowest_corner) o
+swamps/CL_canopy(nomask) o
+swamps/CL_canopy o
+swamps/CL_canopy4 o
+swamps/CL_new_canopy5b o
+swamps/CL_swampelev m
+swamps/FL_cave d
+swamps/FL_dock w
+swamps/FL_hut r
+swamps/FL_hut_inside w
+swamps/FL_hut_inside2 w
+swamps/FL_hut_moss r
+swamps/FL_hut_moss2 r
+swamps/FL_hut_moss3 r
+swamps/FL_lilypad o
+swamps/lilypad2 o
+swamps/FL_lilypad_alfa o
+swamps/FL_lilypad_trim o
+swamps/FL_swamp_path r
+swamps/FL_swamp1 o
+swamps/FL_swamp10 s
+swamps/FL_swamp12 s
+swamps/FL_swamp13 o
+swamps/FL_swamp14 s
+swamps/FL_swamp15 r
+swamps/FL_swamp15b s
+swamps/FL_swamp16 s
+swamps/FL_swamp17 d
+swamps/FL_swamp2 o
+swamps/FL_swamp3 o
+swamps/FL_swamp4 o
+swamps/FL_swamp5 o
+swamps/FL_swamp6 r
+swamps/FL_swamp7 r
+swamps/FL_swamp8 d
+swamps/FL_swampcrossover01 d
+swamps/FL_swampcrossover02 r
+swamps/FL_swampelev w
+swamps/FL_swampwater2
+swamps/FL_swampwater3
+swamps/FL_tigerpit s
+swamps/leaf_test1 o
+swamps/leaf_test2 o
+swamps/moss_trim w
+swamps/new_canopy_lowest o
+swamps/new_canopy_lowest_corner o
+swamps/qer_fl_swampwater3
+swamps/swampwater
+swamps/swleaf
+swamps/TR_rope
+swamps/TR_vinescum
+swamps/wa_test2
+swamps/wa_test4
+swamps/waterfall
+swamps/WL_basement2 r
+swamps/WL_basement2_top r
+swamps/WL_basement2_top2 r
+swamps/WL_boathouse(working) w
+swamps/WL_boathouse w
+swamps/WL_boathouse_arch w
+swamps/WL_boathouse_detail w
+swamps/WL_boathouse_door w
+swamps/WL_boathouse_red w
+swamps/WL_boathouse2 w
+swamps/WL_cave r
+swamps/WL_climb_vines o
+swamps/WL_climb_vinesb o
+swamps/WL_faces w
+swamps/WL_hut w
+swamps/WL_hut_inside w
+swamps/WL_hut_poletop w
+swamps/WL_hut_wood w
+swamps/WL_hutbed o
+swamps/WL_hutdoor w
+swamps/WL_hutpole w
+swamps/WL_hutroof o
+swamps/WL_hutroof_clean o
+swamps/WL_hutroof2 o
+swamps/WL_hutwindow w
+swamps/WL_hutwindow_inside w
+swamps/WL_inside_hut w
+swamps/WL_inside_hut_tr w
+swamps/WL_insidetree w
+swamps/WL_mossyrock r
+swamps/WL_mossyrock_tops o
+swamps/WL_mossyrock_tops2 o
+swamps/WL_mossyrock_tops3 r
+swamps/WL_planthead	o
+swamps/WL_plantstem o
+swamps/WL_stonewall r
+swamps/WL_stonewall_moss r
+swamps/WL_stonewall_sm r
+swamps/WL_swampelev o
+swamps/WL_swampelev_top w
+swamps/WL_swampelev_top_g
+swamps/WL_swampelev_top_r
+swamps/WL_swampelev_toptrim w
+swamps/WL_swamprock r
+swamps/WL_swamprock_trans o
+swamps/WL_swamptree w
+swamps/WL_swamptree_moss o
+swamps/WL_swamptree_moss_trim o
+swamps/WL_swamptree2 w
+swamps/WL_swamptree3 w
+swamps/WL_swamptree3b w
+swamps/WL_swamptree4(rings) w
+swamps/WL_swamptree4 w
+swamps/WL_topoftree w
+swamps/WL_trapdoor w
+swamps/WL_trapdoor_trim m
+swamps/WL_wood(dark) w
+
+under/FL_cave_under s
+under/FL_cave_under_2 s
+under/FL_cave_under_trans r
+under/FL_cave_under_trans2 r
+under/FL_cave_under_trans3 r
+under/FL_cave_under_trans4 r
+under/FL_cave_under1 d
+under/FL_cave_under3 r
+under/FL_machines g
+under/FL_machines2 g
+under/FL_machines3 m
+under/TR_crystal_under r
+under/TR_crystal_under2 r
+under/TR_crystal_under3 r
+under/TR_support m
+under/WL_cave_under r
+under/WL_cave_under2 r
+under/WL_machines m
+under/WL_machines10 m
+under/WL_machines2 m
+under/WL_machines3 m
+under/WL_machines4 m
+under/WL_machines5 m
+under/WL_machines6 m
+under/WL_machines7 m
+under/WL_machines8 m
+under/WL_machines9 m
+
+water/waterfloor2 r
+water/watermetal m
+water/watermetal2 m
+water/waterpillar m
+water/waterpillarbase m
+water/waterstatue m
+water/watertile m
+water/watertrim1 m
+water/waterwall1 m
+water/waterwall2 m
+
+we_cemetary/block r
+we_cemetary/bluemarble r
+we_cemetary/ceiling r
+we_cemetary/cembase r
+we_cemetary/cembroke r
+we_cemetary/cemcircle r
+we_cemetary/cemcircle2 r
+we_cemetary/cemcolumn r
+we_cemetary/cemcolumn2 r
+we_cemetary/cemcolumn2b r
+we_cemetary/cemdirt d
+we_cemetary/cemdoor m
+we_cemetary/cemdoor2 m
+we_cemetary/cemfloor m
+we_cemetary/cemfloor2 r
+we_cemetary/cemglyph m
+we_cemetary/cemmetal m
+we_cemetary/cemobelisk r
+we_cemetary/cemrock r
+we_cemetary/cemrunner m
+we_cemetary/cemrunner2 m
+we_cemetary/cemstair1 r
+we_cemetary/cemstair2 r
+we_cemetary/cemstairtop r
+we_cemetary/cemtablet m
+we_cemetary/cemtrim1 m
+we_cemetary/cemtrim2 m
+we_cemetary/cemtrim3 m
+we_cemetary/cemtrim4 m
+we_cemetary/cemtrim5 r
+we_cemetary/cemtrim6 r
+we_cemetary/cemwall1 r
+we_cemetary/cemwall10 r
+we_cemetary/cemwall11 r
+we_cemetary/cemwall12 r
+we_cemetary/cemwall1a r
+we_cemetary/cemwall1b r
+we_cemetary/cemwall1broke r
+we_cemetary/cemwall1c r
+we_cemetary/cemwall1d r
+we_cemetary/cemwall1e o
+we_cemetary/cemwall1f r
+we_cemetary/cemwall2 r
+we_cemetary/cemwall3 r
+we_cemetary/cemwall4 m
+we_cemetary/cemwall5 r
+we_cemetary/cemwall5top r
+we_cemetary/cemwall6 r
+we_cemetary/cemwall7 m
+we_cemetary/cemwall8 o
+we_cemetary/cemwall9 r
+we_cemetary/cemwl1 m
+we_cemetary/crackedbrick r
+we_cemetary/FL_fogway r
+we_cemetary/FL_fogway_fx
+we_cemetary/FL_temple r
+we_cemetary/fogdoor w
+we_cemetary/fogmushtop s
+we_cemetary/fogtrunk o
+we_cemetary/fogtrunktop o
+we_cemetary/oretrim m
+we_cemetary/pillartop m
+we_cemetary/sandstone r
+we_cemetary/sandstone2 r
+we_cemetary/statue2 m
+we_cemetary/tikibase1 r
+we_cemetary/tikibase2 r
+we_cemetary/TR_fogway m
+we_cemetary/TR_stairs r

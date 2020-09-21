@@ -1,0 +1,125 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ANIMSCALE DIALOG DISCARDABLE  300, 300, 145, 79
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ANIM Export"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,22,58,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,81,58,50,14
+    EDITTEXT        IDC_STARTFRAME,29,18,24,14,ES_AUTOHSCROLL
+    LTEXT           "Start",IDC_STATIC,7,21,17,8
+    EDITTEXT        IDC_STOPFRAME,29,35,24,14,ES_AUTOHSCROLL
+    LTEXT           "Stop",IDC_STATIC,7,37,15,8
+    EDITTEXT        IDC_FRAMERATE,112,18,24,14,ES_AUTOHSCROLL
+    LTEXT           "Frame Rate",IDC_STATIC,68,20,37,8
+    EDITTEXT        IDC_SAMPLERATE,111,33,24,14,ES_AUTOHSCROLL
+    LTEXT           "Sample Rate",IDC_STATIC,67,36,42,8
+    LTEXT           "Frames To Export",IDC_STATIC,7,7,56,8
+END
+
+IDD_DIALOGBAR DIALOG DISCARDABLE  0, 0, 321, 79
+STYLE DS_CENTER | WS_VISIBLE | WS_CAPTION
+CAPTION "Skeleton export"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Progress",IDC_EXPORTSTATUS,16,14,289,9
+    CONTROL         "Progress2",IDC_PROGRESS,"msctls_progress32",WS_BORDER,
+                    16,30,289,14
+    PUSHBUTTON      "Cancel",IDCANCEL,136,51,50,14,NOT WS_TABSTOP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ANIMSCALE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 138
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 72
+    END
+
+    IDD_DIALOGBAR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 314
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 72
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,18 @@
+waitforplayer
+start:
+
+end
+
+dude_go_thread:
+
+$dude thread dude_AIthread
+
+end
+
+dude_AIthread:
+local.self walkto $dude_dest
+waitFor local.self
+local.self idle STAND_IDLE
+
+end
+

@@ -1,0 +1,349 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\dlgedit.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\dlgedit.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About dlgedit"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "dlgedit Version 1.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 1999",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_DLGEDIT_DIALOG DIALOGEX 0, 0, 224, 54
+STYLE WS_MINIMIZEBOX | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Dialog Editor"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+END
+
+IDD_PROPS DIALOGEX 0, 0, 180, 366
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Properties"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,345,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,119,345,54,14
+    EDITTEXT        IDC_NAME,43,7,101,12,ES_AUTOHSCROLL
+    LTEXT           "Name:",IDC_STATIC,7,11,22,8
+    LTEXT           "Class:",IDC_STATIC,7,27,20,8
+    LTEXT           "Title:",IDC_STATIC,7,43,36,8,0,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_TITLE,43,39,101,12,ES_AUTOHSCROLL
+    LTEXT           "Position: x y width height",IDC_STATIC,7,198,112,8
+    EDITTEXT        IDC_POSITION,43,210,130,12,ES_AUTOHSCROLL
+    LTEXT           "Class-specific attributes:",IDC_STATIC,7,229,76,8
+    EDITTEXT        IDC_ATTRIBS,7,242,166,92,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_AUTOHSCROLL | ES_WANTRETURN | WS_VSCROLL
+    COMBOBOX        IDC_CLASS,43,23,101,99,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_STUFFCOMMAND,43,55,101,12,ES_AUTOHSCROLL
+    LTEXT           "Cmd:",IDC_STATIC,7,59,36,8,0,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_CVAR,43,71,101,12,ES_AUTOHSCROLL
+    LTEXT           "CVar",IDC_STATIC,7,75,36,9,0,WS_EX_TRANSPARENT
+    LTEXT           "BGColor",IDC_STATIC,12,137,36,10
+    LTEXT           "FGColor",IDC_STATIC,12,155,36,10
+    CONTROL         "Button2",IDC_BGCOLOR,"Button",BS_OWNERDRAW | WS_TABSTOP,
+                    48,134,28,12
+    CONTROL         "Button3",IDC_FGCOLOR,"Button",BS_OWNERDRAW | WS_TABSTOP,
+                    48,153,28,12
+    LTEXT           "BG Alpha",IDC_STATIC,85,137,33,9
+    EDITTEXT        IDC_BGALPHA,118,135,31,12,ES_AUTOHSCROLL
+    LTEXT           "FG Alpha",IDC_STATIC,85,156,33,9
+    EDITTEXT        IDC_FGALPHA,118,154,31,12,ES_AUTOHSCROLL
+    LTEXT           "Border",IDC_STATIC,7,92,36,12
+    COMBOBOX        IDC_BORDERSTYLE,43,87,101,91,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_MENUPROPS DIALOG DISCARDABLE  0, 0, 186, 207
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Menu Properties"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,129,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,129,24,50,14
+    EDITTEXT        IDC_MENUNAME,53,46,126,13,ES_AUTOHSCROLL
+    LTEXT           "Menu Name",IDC_STATIC,7,45,44,16,SS_CENTERIMAGE
+    COMBOBOX        IDC_MOTION,53,64,126,135,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EXTRADATA,7,108,166,92,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_AUTOHSCROLL | ES_WANTRETURN | WS_VSCROLL
+    EDITTEXT        IDC_TIME,53,83,40,14,ES_AUTOHSCROLL
+    LTEXT           "Time",IDC_STATIC,7,87,16,8
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "dlgedit MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "dlgedit\0"
+            VALUE "LegalCopyright", "Copyright (C) 1999\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "dlgedit.EXE\0"
+            VALUE "ProductName", "dlgedit Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_DLGEDIT_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 217
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 47
+    END
+
+    IDD_PROPS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 173
+        VERTGUIDE, 43
+        VERTGUIDE, 71
+        VERTGUIDE, 80
+        VERTGUIDE, 119
+        VERTGUIDE, 144
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 359
+    END
+
+    IDD_MENUPROPS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 200
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINMENU MENU DISCARDABLE 
+BEGIN
+    POPUP "POPUP"
+    BEGIN
+        MENUITEM "&Open",                       ID_FILE_OPEN
+        MENUITEM "&Save",                       ID_FILE_SAVE
+        MENUITEM "Save &As...",                 ID_FILE_SAVEAS
+        MENUITEM SEPARATOR
+        MENUITEM "&New Item",                   ID_NEW_ITEM
+        MENUITEM "&Delete Item",                ID_DELETE_ITEM
+        MENUITEM SEPARATOR
+        MENUITEM "Send To Back",                ID_EDIT_SENDTOBACK
+        MENUITEM SEPARATOR
+        MENUITEM "&Menu Properties",            ID_MENU_PROPERTIES
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_PROPS DLGINIT
+BEGIN
+    IDC_CLASS, 0x403, 7, 0
+0x7542, 0x7474, 0x6e6f, "\000" 
+    IDC_CLASS, 0x403, 7, 0
+0x6c53, 0x6469, 0x7265, "\000" 
+    IDC_CLASS, 0x403, 9, 0
+0x6843, 0x6365, 0x426b, 0x786f, "\000" 
+    IDC_CLASS, 0x403, 6, 0
+0x6946, 0x6c65, 0x0064, 
+    IDC_CLASS, 0x403, 6, 0
+0x614c, 0x6562, 0x006c, 
+    IDC_CLASS, 0x403, 5, 0
+0x694c, 0x7473, "\000" 
+    IDC_CLASS, 0x403, 8, 0
+0x694c, 0x7473, 0x6f42, 0x0078, 
+    IDC_CLASS, 0x403, 11, 0
+0x6942, 0x646e, 0x7542, 0x7474, 0x6e6f, "\000" 
+    IDC_BORDERSTYLE, 0x403, 5, 0
+0x4f4e, 0x454e, "\000" 
+    IDC_BORDERSTYLE, 0x403, 10, 0
+0x4433, 0x425f, 0x524f, 0x4544, 0x0052, 
+    IDC_BORDERSTYLE, 0x403, 14, 0
+0x4e49, 0x4544, 0x544e, 0x425f, 0x524f, 0x4544, 0x0052, 
+    0
+END
+
+IDD_MENUPROPS DLGINIT
+BEGIN
+    IDC_MOTION, 0x403, 5, 0
+0x4f4e, 0x454e, "\000" 
+    IDC_MOTION, 0x403, 10, 0
+0x5246, 0x4d4f, 0x4c5f, 0x4645, 0x0054, 
+    IDC_MOTION, 0x403, 11, 0
+0x5246, 0x4d4f, 0x525f, 0x4749, 0x5448, "\000" 
+    IDC_MOTION, 0x403, 12, 0
+0x5246, 0x4d4f, 0x425f, 0x544f, 0x4f54, 0x004d, 
+    IDC_MOTION, 0x403, 9, 0
+0x5246, 0x4d4f, 0x545f, 0x504f, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About dlgedit..."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\dlgedit.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

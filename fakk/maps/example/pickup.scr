@@ -1,0 +1,25 @@
+waitforplayer
+start:
+
+$shgliek1 idle STILL
+
+end
+
+dude_go_thread:
+
+$dude thread dude_AIthread
+
+end
+
+dude_AIthread:
+local.self pickupent $shgliek1 shgliek_pickup
+waitFor local.self
+local.self walkto $dude_dest walk_shgliek
+waitFor local.self
+local.self throwent shgliek_toss
+waitFor local.self
+local.self idle STAND_IDLE
+
+end
+
+

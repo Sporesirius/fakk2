@@ -1,0 +1,12 @@
+end
+waitforplayer
+wait 5
+loop:
+cuecamera $cam1 0
+wait 5
+cuecamera $cam2 0
+wait 5
+cueplayer 0
+wait 5
+//goto loop
+end
